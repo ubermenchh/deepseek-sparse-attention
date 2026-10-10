@@ -1,0 +1,22 @@
+[project]
+name = "deepseek-sparse-attention"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.14.1",
+]
+
+[dependency-groups]
+dev = [
+    "numpy>=2.5.3",
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+# pytest finds `dsa.py` at the repo root without installing the project as a package.
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
